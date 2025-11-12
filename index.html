@@ -150,23 +150,27 @@
   </p>
 </div>
 
-              <!-- Chart container -->
-              <div id="chart-container" class="chart-wrapper" 
-                   role="region" 
-                   aria-labelledby="bond-chart-title" 
-                   aria-describedby="bond-chart-desc">
-                <canvas id="bond-chart"></canvas>
-              </div>
+             <!-- Chart container (add tabindex="-1" for programmatic focus) -->
+<div id="chart-container" class="chart-wrapper" 
+     role="region" 
+     aria-labelledby="bond-chart-title" 
+     aria-describedby="bond-chart-desc"
+     tabindex="-1">  <!-- Added tabindex="-1" -->
+  <canvas id="bond-chart"></canvas>
+</div>
 
-              <!-- Table container -->
-              <div id="table-container" class="table-wrapper" style="display: none;">
-                <table id="cash-flow-table" class="data-table" tabindex="0">
-                  <!-- Populated by JavaScript -->
-                </table>
-                <p id="table-note" class="table-note">
-                  Note: Values in parentheses indicate negative cash flows (outflows).
-                </p>
-              </div>
+<!-- Table container (add role, aria-label, and tabindex="-1") -->
+<div id="table-container" class="table-wrapper" style="display: none;"
+     role="region"  <!-- Added role -->
+     aria-label="Bond cash flow table"  <!-- Added label for accessibility -->
+     tabindex="-1">  <!-- Added tabindex="-1" -->
+  <table id="cash-flow-table" class="data-table">  <!-- Removed tabindex="0" -->
+    <!-- Populated by JavaScript -->
+  </table>
+  <p id="table-note" class="table-note">
+    Note: Values in parentheses indicate negative cash flows (outflows).
+  </p>
+</div>
             </div>
           </section>
         </div>
