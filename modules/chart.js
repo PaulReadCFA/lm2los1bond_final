@@ -209,8 +209,8 @@ onHover: (event, activeElements) => {
             y = Math.min(bar0.y, bar1.y) - 5;
           }
           
-          // Draw the label
-          ctx.fillText(formatCurrency(total, true), x, y);
+          // Draw the label (use parentheses for negative values)
+          ctx.fillText(formatCurrency(total, false), x, y);
         });
         
         ctx.restore();
