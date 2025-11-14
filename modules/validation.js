@@ -97,9 +97,9 @@ export function updateFieldError(fieldId, errorMessage) {
 export function updateValidationSummary(errors) {
   const summary = $('#validation-summary');
   const list = $('#validation-list');
-  
+
   if (!summary || !list) return;
-  
+
   if (hasErrors(errors)) {
     list.innerHTML = Object.entries(errors)
       .map(([field, message]) => `<li>${message}</li>`)

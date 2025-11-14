@@ -43,7 +43,7 @@ function init() {
   setupViewToggle();
   
   // Set up skip link handlers
-  setupSkipLinks();  // â† Add this line
+  setupSkipLinks();  // Ã¢â€ Â Add this line
   
   // Set up window resize listener for chart labels
   setupResizeListener();
@@ -64,26 +64,29 @@ function init() {
  * Set up skip link handlers for accessibility
  */
 function setupSkipLinks() {
-  const skipToTable = document.querySelector('a[href="#data-table"]');
+  const skipToVisualizer = document.querySelector('a[href="#visualizer"]');
   
-  if (skipToTable) {
-    listen(skipToTable, 'click', (e) => {
+  if (skipToVisualizer) {
+    listen(skipToVisualizer, 'click', (e) => {
       // Prevent default to handle it ourselves
       e.preventDefault();
       
-      // Switch to table view if not already there
-      if (state.viewMode !== 'table') {
-        switchView('table');
-      } else {
-        // If already in table view, just focus the table
-        focusElement($('#cash-flow-table'), 100);
-      }
+      // Switch to table view
+      switchView('table');
       
       // Scroll the section into view
-      const section = $('#data-table');
+      const section = $('#visualizer');
       if (section) {
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
+      
+      // Focus the table after switching
+      setTimeout(() => {
+        const table = $('#cash-flow-table');
+        if (table) {
+          table.focus();
+        }
+      }, 400);
     });
   }
 }
@@ -379,25 +382,25 @@ function runSelfTests() {
       if (test.expected.price !== undefined) {
         const diff = Math.abs(result.bondPrice - test.expected.price);
         if (diff <= test.expected.tolerance) {
-          console.log(`âœ“ ${test.name} passed`);
+          console.log(`Ã¢Å“â€œ ${test.name} passed`);
         } else {
-          console.warn(`âœ— ${test.name} failed: expected ${test.expected.price}, got ${result.bondPrice}`);
+          console.warn(`Ã¢Å“â€” ${test.name} failed: expected ${test.expected.price}, got ${result.bondPrice}`);
         }
       } else if (test.expected.priceShouldBe === 'greater than 100') {
         if (result.bondPrice > 100) {
-          console.log(`âœ“ ${test.name} passed`);
+          console.log(`Ã¢Å“â€œ ${test.name} passed`);
         } else {
-          console.warn(`âœ— ${test.name} failed: price should be > 100, got ${result.bondPrice}`);
+          console.warn(`Ã¢Å“â€” ${test.name} failed: price should be > 100, got ${result.bondPrice}`);
         }
       } else if (test.expected.priceShouldBe === 'less than 100') {
         if (result.bondPrice < 100) {
-          console.log(`âœ“ ${test.name} passed`);
+          console.log(`Ã¢Å“â€œ ${test.name} passed`);
         } else {
-          console.warn(`âœ— ${test.name} failed: price should be < 100, got ${result.bondPrice}`);
+          console.warn(`Ã¢Å“â€” ${test.name} failed: price should be < 100, got ${result.bondPrice}`);
         }
       }
     } catch (error) {
-      console.error(`âœ— ${test.name} threw error:`, error);
+      console.error(`Ã¢Å“â€” ${test.name} threw error:`, error);
     }
   });
   

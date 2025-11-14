@@ -51,7 +51,7 @@ body {
   background-color: var(--color-gray-50);
   color: var(--color-gray-800);
   line-height: 1.5;
-  padding: 0 1.5rem 1.5rem;  /* â¬…ï¸ no top padding */
+  padding: 0 1.5rem 1.5rem;  /* Ã¢Â¬â€¦Ã¯Â¸Â no top padding */
   min-height: 100vh;
 }
 
@@ -85,14 +85,9 @@ nav[aria-label="Skip links"] {
   outline-offset: 2px;
 }
 
-/* Space between skip links when both are focused */
-.skip-link:nth-child(2) {
-  left: auto;
-  right: 1rem;
-}
-
+/* Stack skip links vertically when both are focused */
 .skip-link:nth-child(2):focus {
-  right: 1rem;
+  top: 4.5rem; /* Stack below the first skip link */
 }
 
 /* Screen Reader Only Content */
@@ -174,16 +169,51 @@ nav[aria-label="Skip links"] {
 
 .equation-container {
   padding: 1rem;
+  margin: 0.75rem 0;
   background: white;
   border: 1px solid var(--color-gray-200);
   border-radius: 0.5rem;
   overflow-x: auto;
   overflow-y: hidden;
   max-width: 100%;
+  -webkit-overflow-scrolling: touch; /* smooth on iOS */
 }
 
+/* Responsive equation scaling using font-size */
+@media (max-width: 768px) {
+  .equation-container math {
+    font-size: 0.95em;
+  }
+  .equation-container {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .equation-container math {
+    font-size: 0.85em;
+  }
+  .equation-container {
+    padding: 0.5rem;
+  }
+  
+  .equation-intro {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .equation-container math {
+    font-size: 0.75em;
+  }
+  .equation-container {
+    padding: 0.25rem;
+  }
+}
+
+/* Allow equation to scale on narrow screens */
 .equation-container > div {
-  min-width: max-content;
+  /* Removed min-width: max-content to allow proper responsive scaling */
 }
 
 .equation-container:focus {
@@ -670,7 +700,7 @@ nav[aria-label="Skip links"] {
 }
 
 .validation-summary li::before {
-  content: "â€¢";
+  content: "•";
   position: absolute;
   left: 0;
 }
@@ -693,6 +723,27 @@ nav[aria-label="Skip links"] {
   
   .card-title {
     font-size: 1.125rem;
+  }
+  
+  /* Responsive results boxes */
+  .result-box {
+    padding: 0.875rem;
+  }
+  
+  .result-title {
+    font-size: 1rem;
+  }
+  
+  .result-value {
+    font-size: 1.5rem;
+  }
+  
+  .result-value-small {
+    font-size: 0.8125rem;
+  }
+  
+  .analysis-content {
+    font-size: 0.875rem;
   }
   
   .view-controls {
@@ -719,6 +770,25 @@ nav[aria-label="Skip links"] {
   
   .input-with-suffix {
     width: 100%;
+  }
+}
+
+/* Additional mobile improvements */
+@media (max-width: 480px) {
+  .card {
+    padding: 0.875rem;
+  }
+  
+  .result-box {
+    padding: 0.75rem;
+  }
+  
+  .result-value {
+    font-size: 1.375rem;
+  }
+  
+  #results-content {
+    gap: 1rem;
   }
 }
 
@@ -830,7 +900,7 @@ nav[aria-label="Skip links"] {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 6rem;                /* â¬…ï¸ identical total width for every input box */
+  width: 6rem;                /* Ã¢Â¬â€¦Ã¯Â¸Â identical total width for every input box */
   position: relative;
 }
 
@@ -848,7 +918,7 @@ nav[aria-label="Skip links"] {
   transform: translateY(-50%);
   color: var(--color-gray-500);
   pointer-events: none;
-  width: 1.2rem;              /* â¬…ï¸ fixed width keeps all % in same column */
+  width: 1.2rem;              /* Ã¢Â¬â€¦Ã¯Â¸Â fixed width keeps all % in same column */
   text-align: right;
   font-size: 0.875rem;
 }
