@@ -2,16 +2,35 @@
    CFA Bond Calculator Styles
    ========================================================================== */
 
-/* CSS Variables for CFA Brand Colors */
+/* CSS Variables - WCAG AA Compliant Color Palette */
 :root {
-  --color-primary: #4476ff;
-  --color-dark: #06005a;
-  --color-dark-alt: #38337b;
-  --color-coupon: #3369FF; /* WCAG AA verified 4.55:1 */
-  --color-yield: #7a46ff;
-  --color-mint: #49b2b8;
-  --color-orange: #b95b1d;
-  --color-purchase: #f2af81;
+  /* Primary Data Colors - All meet WCAG AA (4.5:1 minimum) */
+  --color-primary-dark-blue: #06005a;    /* 18.18:1 - CFA Brand */
+  --color-blue-interactive: #3c6ae5;     /* 4.79:1 - Adjusted brand blue */
+  --color-secondary-dark-blue: #38337b;  /* 10.89:1 - CFA Brand */
+  --color-purple-bold: #7a46ff;          /* 5.06:1 - CFA Brand */
+  --color-eggplant-deep: #50037f;        /* 12.65:1 - CFA Brand */
+  --color-eggplant-medium: #733599;      /* 7.78:1 - CFA Brand */
+  --color-orange-deep: #b95b1d;          /* 4.59:1 - Adjusted brand orange */
+  --color-teal-data: #0079a6;            /* 4.90:1 - Adjusted brand cyan */
+  --color-green-data: #15803d;           /* 5.02:1 - Professional green */
+  --color-green-data-alt: #047857;       /* 5.48:1 - Alternative green */
+  
+  /* Bond Calculator Specific Colors */
+  --color-bond-pv: #b95b1d;              /* Orange Deep - Bond price/PV */
+  --color-coupon: #3c6ae5;               /* Blue Interactive - Coupon payments */
+  --color-yield: #7a46ff;                /* Purple Bold - Yield to maturity */
+  --color-face-value: #0079a6;           /* Teal Data - Face value */
+  --color-purchase: #b95b1d;             /* Orange Deep - Initial purchase (chart) */
+  
+  /* Background Colors - For result boxes (tested with dark text) */
+  --color-bg-blue: #eff6ff;              /* 13.49:1 with dark text */
+  --color-bg-purple: #faf5ff;            /* 13.68:1 with dark text */
+  --color-bg-orange: #fff7ed;            /* 13.83:1 with dark text */
+  --color-bg-green: #f0fdf4;             /* 14.02:1 with dark text */
+  --color-bg-teal: #f0fdfa;              /* 14.07:1 with dark text */
+  
+  /* Neutral Colors */
   --color-gray-50: #f9fafb;
   --color-gray-100: #f3f4f6;
   --color-gray-200: #e5e7eb;
@@ -19,19 +38,34 @@
   --color-gray-500: #6b7280;
   --color-gray-700: #374151;
   --color-gray-800: #1f2937;
+  
+  /* Semantic Colors */
+  --color-error: #b91c1c;                /* 7.77:1 - Error text */
+  --color-error-bg: #fef2f2;             /* 13.96:1 - Error background */
+  --color-success: #047857;              /* 5.48:1 - Success messages */
+  --color-success-bg: #f0fdf4;           /* 14.02:1 - Success background */
+  --color-warning: #b95b1d;              /* 4.59:1 - Warning text */
+  --color-warning-bg: #fff7ed;           /* 13.83:1 - Warning background */
+  
+  /* Legacy aliases for compatibility */
+  --color-primary: #3c6ae5;              /* Blue Interactive */
+  --color-dark: #06005a;                 /* Primary Dark Blue */
+  --color-dark-alt: #38337b;             /* Secondary Dark Blue */
+  --color-orange: #b95b1d;               /* Orange Deep */
+  --color-mint: #0079a6;                 /* Teal Data (replaces non-compliant mint) */
   --color-red-50: #fef2f2;
   --color-red-200: #fecaca;
   --color-red-300: #fca5a5;
   --color-red-700: #b91c1c;
   --color-red-800: #991b1b;
   --color-blue-50: #eff6ff;
-  --color-blue-500: #3b82f6;
-  --color-blue-600: #2563eb;
+  --color-blue-500: #3c6ae5;
+  --color-blue-600: #3c6ae5;
   --color-purple-50: #faf5ff;
   --color-purple-200: #e9d5ff;
   --color-purple-300: #d8b4fe;
-  --color-purple-700: #7e22ce;
-  --color-purple-800: #6b21a8;
+  --color-purple-700: #733599;
+  --color-purple-800: #50037f;
 }
 
 /* Reset and Base Styles */
@@ -51,7 +85,7 @@ body {
   background-color: var(--color-gray-50);
   color: var(--color-gray-800);
   line-height: 1.5;
-  padding: 0 1.5rem 1.5rem;  /* Ã¢Â¬â€¦Ã¯Â¸Â no top padding */
+  padding: 0 1.5rem 1.5rem;  /* ÃƒÂ¢Ã‚Â¬Ã¢â‚¬Â¦ÃƒÂ¯Ã‚Â¸Ã‚Â no top padding */
   min-height: 100vh;
 }
 
@@ -700,7 +734,7 @@ nav[aria-label="Skip links"] {
 }
 
 .validation-summary li::before {
-  content: "•";
+  content: "â€¢";
   position: absolute;
   left: 0;
 }
@@ -900,7 +934,7 @@ nav[aria-label="Skip links"] {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 6rem;                /* Ã¢Â¬â€¦Ã¯Â¸Â identical total width for every input box */
+  width: 6rem;                /* ÃƒÂ¢Ã‚Â¬Ã¢â‚¬Â¦ÃƒÂ¯Ã‚Â¸Ã‚Â identical total width for every input box */
   position: relative;
 }
 
@@ -918,7 +952,7 @@ nav[aria-label="Skip links"] {
   transform: translateY(-50%);
   color: var(--color-gray-500);
   pointer-events: none;
-  width: 1.2rem;              /* Ã¢Â¬â€¦Ã¯Â¸Â fixed width keeps all % in same column */
+  width: 1.2rem;              /* ÃƒÂ¢Ã‚Â¬Ã¢â‚¬Â¦ÃƒÂ¯Ã‚Â¸Ã‚Â fixed width keeps all % in same column */
   text-align: right;
   font-size: 0.875rem;
 }
