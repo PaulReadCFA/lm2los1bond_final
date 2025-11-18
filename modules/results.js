@@ -76,7 +76,7 @@ function createAnalysisBox(calculations, params) {
   const box = createElement('div', { className: 'result-box analysis' });
   
   const title = createElement('h5', { className: 'result-title analysis' }, 
-    'Premium–Discount Analysis'
+    'Premium—Discount Analysis'
   );
   box.appendChild(title);
   
@@ -96,7 +96,7 @@ function createAnalysisBox(calculations, params) {
   const analysisText = createElement('div');
   
   if (bondType.type === 'par') {
-    analysisText.textContent = `Trading at par. Coupon rate ≈ YTM (${ytm.toFixed(2)}%)`;
+    analysisText.textContent = `Trading at par. Coupon rate â‰ˆ YTM (${ytm.toFixed(2)}%)`;
   } else if (bondType.type === 'premium') {
     analysisText.innerHTML = `Trading ${formatCurrency(bondType.difference)} above par. ` +
       `Coupon (${couponRate.toFixed(2)}%) &gt; YTM (${ytm.toFixed(2)}%)`;

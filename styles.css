@@ -85,7 +85,7 @@ body {
   background-color: var(--color-gray-50);
   color: var(--color-gray-800);
   line-height: 1.5;
-  padding: 0 1.5rem 1.5rem;  /* ÃƒÂ¢Ã‚Â¬Ã¢â‚¬Â¦ÃƒÂ¯Ã‚Â¸Ã‚Â no top padding */
+  padding: 0 1.5rem 1.5rem;  /* ÃƒÆ’Ã‚Â¢Ãƒâ€šÃ‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã‚Â¯Ãƒâ€šÃ‚Â¸Ãƒâ€šÃ‚Â no top padding */
   min-height: 100vh;
 }
 
@@ -320,8 +320,8 @@ nav[aria-label="Skip links"] {
 }
 
 .result-box.price {
-  background-color: #fff7ed;
-  border-color: #fed7aa;
+  background-color: var(--color-bg-orange);
+  border-color: var(--color-orange-deep);
 }
 
 .result-box.analysis {
@@ -338,7 +338,7 @@ nav[aria-label="Skip links"] {
 .result-title.price {
   font-size: 1.125rem; /* 18px */
      font-weight: 600;     /* bold */
-  color: #B0571C;
+  color: var(--color-orange-deep);
 }
 
 .result-title.analysis {
@@ -349,7 +349,7 @@ nav[aria-label="Skip links"] {
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.875rem;
   font-weight: 400;
-  color: #E86B17;
+  color: var(--color-orange-deep);
 }
 
 .result-value-small {
@@ -655,7 +655,7 @@ nav[aria-label="Skip links"] {
 }
 
 .required-star {
-  color: #dc2626;
+  color: var(--color-error);
   margin-left: 0.25rem;
 }
 
@@ -734,7 +734,7 @@ nav[aria-label="Skip links"] {
 }
 
 .validation-summary li::before {
-  content: "â€¢";
+  content: "•";
   position: absolute;
   left: 0;
 }
@@ -934,7 +934,7 @@ nav[aria-label="Skip links"] {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 6rem;                /* ÃƒÂ¢Ã‚Â¬Ã¢â‚¬Â¦ÃƒÂ¯Ã‚Â¸Ã‚Â identical total width for every input box */
+  width: 6rem;                /* ÃƒÆ’Ã‚Â¢Ãƒâ€šÃ‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã‚Â¯Ãƒâ€šÃ‚Â¸Ãƒâ€šÃ‚Â identical total width for every input box */
   position: relative;
 }
 
@@ -952,7 +952,7 @@ nav[aria-label="Skip links"] {
   transform: translateY(-50%);
   color: var(--color-gray-500);
   pointer-events: none;
-  width: 1.2rem;              /* ÃƒÂ¢Ã‚Â¬Ã¢â‚¬Â¦ÃƒÂ¯Ã‚Â¸Ã‚Â fixed width keeps all % in same column */
+  width: 1.2rem;              /* ÃƒÆ’Ã‚Â¢Ãƒâ€šÃ‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã‚Â¯Ãƒâ€šÃ‚Â¸Ãƒâ€šÃ‚Â fixed width keeps all % in same column */
   text-align: right;
   font-size: 0.875rem;
 }
@@ -966,7 +966,7 @@ math {
   font-family: 'Times New Roman', Georgia, serif;
   font-size: 1.125rem;
   font-weight: 600;
-  color: #111;
+  color: var(--color-gray-800);
   margin: 0.5rem 0;
 }
 
@@ -975,7 +975,7 @@ math {
 /* Subscripts slightly smaller */
 math msub mtext {
   font-size: 0.75em;
-  color: #b95b1d;
+  color: var(--color-bond-pv);
 }
 
 /* Fractions and operators spacing */
