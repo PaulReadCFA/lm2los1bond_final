@@ -12,6 +12,7 @@
   --color-eggplant-deep: #50037f;        /* 12.65:1 - CFA Brand */
   --color-eggplant-medium: #733599;      /* 7.78:1 - CFA Brand */
   --color-orange-deep: #b95b1d;          /* 4.59:1 - Adjusted brand orange */
+  --color-orange-darker: #a84f15;        /* 5.21:1 - For text on light orange bg */
   --color-teal-data: #0079a6;            /* 4.90:1 - Adjusted brand cyan */
   --color-green-data: #15803d;           /* 5.02:1 - Professional green */
   --color-green-data-alt: #047857;       /* 5.48:1 - Alternative green */
@@ -338,7 +339,7 @@ nav[aria-label="Skip links"] {
 .result-title.price {
   font-size: 1.125rem; /* 18px */
      font-weight: 600;     /* bold */
-  color: var(--color-orange-deep);
+  color: var(--color-orange-darker);
 }
 
 .result-title.analysis {
